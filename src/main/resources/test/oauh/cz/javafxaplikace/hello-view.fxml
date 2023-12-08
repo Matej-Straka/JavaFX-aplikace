@@ -18,7 +18,7 @@
       <TextArea id="console" fx:id="console" editable="false" prefHeight="236.0" prefWidth="237.0" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Label fx:id="label" prefHeight="17.0" prefWidth="1066.0" />
+            <Label fx:id="label" minWidth="54.0" prefHeight="17.0" prefWidth="1066.0" />
             <Button mnemonicParsing="false" onAction="#ulozit" text="uložit" />
             <Button mnemonicParsing="false" onAction="#nacist" text="načíst" />
         </buttons>
