@@ -1,7 +1,6 @@
 package test.oauh.cz.javafxaplikace;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -21,7 +20,7 @@ public class HelloController {
 
     @FXML
     protected void onGenButtonClick() {
-        console.setText(String.join("\n", String.valueOf(rand.nextInt(Integer.parseInt(cislo.getText()))), console.getText()) );
+        console.setText(String.join("\n", String.valueOf(rand.nextDouble(Double.parseDouble(cislo.getText()))), console.getText()) );
     }
 
     @FXML
@@ -43,13 +42,13 @@ public class HelloController {
 
     @FXML
     protected void nacist(){
-        String s = "";
+        StringBuilder s = new StringBuilder();
         try(Scanner sc = new Scanner(new BufferedReader(new FileReader("text.txt")))) {
             while(sc.hasNextLine()){
                 String[] ss = sc.nextLine().split(";");
-                s = s + ss[0] + "\n";
+                s.append(ss[0]).append("\n");
             }
-            console.setText(s);
+            console.setText(s.toString());
             label.setText("uspěšně načteno");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
